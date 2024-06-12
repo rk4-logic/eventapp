@@ -1,14 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import {
-  ClerkProvider,
-  SignIn,
-  SignInButton,
-  SignUp,
-  SignedIn,
-  SignedOut,
-  UserButton,
-  useUser
+  ClerkProvider
 } from '@clerk/nextjs'
 import "./globals.css";
 

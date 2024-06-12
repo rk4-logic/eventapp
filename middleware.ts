@@ -8,13 +8,21 @@ const isPublicRoute = createRouteMatcher([
   '/events:id',
   '/api/webhook/stripe',
   '/api/webhook/clerk',
-  '/api/uploadthing'
+  '/api/uploadthing',
+  '/sign-in(.*)', 
+  '/sign-up(.*)'
+
 ]);
 
 export default clerkMiddleware((auth, req) => {
-  if (!isPublicRoute(req)) auth().protect();
-});
+  if (!isPublicRoute(req)) {
+    auth().protect();
+  };
+}, { debug: true });
+
+// export default clerkMiddleware();
 
 export const config = {
   matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api|trpc)(.*)"],
+
 };
