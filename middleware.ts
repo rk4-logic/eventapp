@@ -16,8 +16,11 @@ const isPublicRoute = createRouteMatcher([
 
 export default clerkMiddleware((auth, req) => {
   if (!isPublicRoute(req)) {
+    console.log('Protected route, authentication required.');
     auth().protect();
-  };
+  } else {
+    console.log('Public route, no authentication required.');
+  }
 }, { debug: true });
 
 // export default clerkMiddleware();
