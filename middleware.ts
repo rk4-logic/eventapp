@@ -6,8 +6,8 @@ import {
 const isPublicRoute = createRouteMatcher([
   '/',
   '/events:id',
-  '/api/webhook/stripe',
-  '/api/webhook/clerk',
+  '/api/webhooks/stripe',
+  '/api/webhooks/clerk',
   '/api/uploadthing',
   '/sign-in(.*)', 
   '/sign-up(.*)'
